@@ -1,7 +1,6 @@
-from crewai.tools import BaseTool
 from typing import Type
+from crewai_tools import BaseTool
 from pydantic import BaseModel, Field
-
 
 class MyCustomToolInput(BaseModel):
     """Input schema for MyCustomTool."""
@@ -10,7 +9,7 @@ class MyCustomToolInput(BaseModel):
 class MyCustomTool(BaseTool):
     name: str = "Name of my tool"
     description: str = (
-        "Clear description for what this tool is useful for, your agent will need this information to use it."
+        "Clear description for what this tool is useful for, you agent will need this information to use it."
     )
     args_schema: Type[BaseModel] = MyCustomToolInput
 
